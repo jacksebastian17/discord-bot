@@ -4,8 +4,8 @@ import time
 import asyncio
 
 
-# bot_client_id = 646168037044781067
-# server_id = 646167787756191744
+# bot_client_id
+# server_id
 messages = joined = 0
 
 
@@ -51,7 +51,7 @@ async def on_message(message):
     global messages
     messages += 1
 
-    id = client.get_guild(646167787756191744)
+    id = client.get_guild(SERVER_ID)
 
     if message.content.find("!hello") != -1:
         await message.channel.send('Hello! {0.author.mention}'.format(message))
@@ -72,4 +72,4 @@ async def on_member_join(member):
 
 
 client.loop.create_task(update_stats())
-client.run(token)
+client.run(TOKEN)
